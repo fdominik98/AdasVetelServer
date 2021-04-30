@@ -71,16 +71,16 @@ namespace AdasVetelServer.logic.ner
                 }
             }
             ServerLogger.Instance.writeLog($"Found pattern based on {fileName}:");
-            ServerLogger.Instance.writeLog("{");
-            foreach (MatchResult item in matches)
-            {
-                ServerLogger.Instance.writeLog("\t" + item.Value + " || " + item.Weight);
-            }
-            ServerLogger.Instance.writeLog("}");
+            //ServerLogger.Instance.writeLog("{");
+            //foreach (MatchResult item in matches)
+            //{
+            //    ServerLogger.Instance.writeLog("\t" + item.Value + " || " + item.Weight);
+            //}
+            //ServerLogger.Instance.writeLog("}");
 
             // sorts first by index then by weigth            
 
-            if(ep.PatternLargestIndex)
+            if (ep.PatternLargestIndex)
                 matches.Sort(delegate (MatchResult m1, MatchResult m2) { return m1.BeginIndex.CompareTo(m2.BeginIndex)*-1; });
             else
                 matches.Sort(delegate (MatchResult m1, MatchResult m2) { return m1.BeginIndex.CompareTo(m2.BeginIndex); });

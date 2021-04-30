@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace AdasVetelServer.db
 {
+    public delegate List<T> TwoIdCallBack<T>(int? id, int? id2);
     class TwoIdRouteMapper<T> : RouteMapperBase where T : DbElement
     {
         private event TwoIdCallBack<T> CallBack;

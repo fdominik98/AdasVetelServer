@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 
 namespace AdasVetelServer.db
 {
-    
+
+    public delegate List<T> OneIdCallBack<T>(int? id);
     class OneIdRouteMapper<T> : RouteMapperBase where T : DbElement
     {
         private event OneIdCallBack<T> CallBack;

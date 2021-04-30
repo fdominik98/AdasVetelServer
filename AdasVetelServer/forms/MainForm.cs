@@ -54,12 +54,9 @@ namespace AdasVetelServer
 
         private void xmlSelectButton_Click(object sender, EventArgs e)
         {
-            string pathFile = Application.StartupPath + "\\prevPath\\patternPrevPath.loc";
-            string dir = "";
-            if (File.Exists(pathFile))
-                dir = File.ReadAllText(pathFile);
-            else
-                File.Create(pathFile);
+            string pathFile = Application.StartupPath + "\\prevPath\\patternPrevPath.loc";         
+            string dir = File.ReadAllText(pathFile);            
+              
             if (!Directory.Exists(dir))
                 dir = Application.StartupPath + "\\entityPatterns";
             using (OpenFileDialog ofd = new OpenFileDialog()
@@ -81,12 +78,8 @@ namespace AdasVetelServer
 
         private void contractSelectButton_Click(object sender, EventArgs e)
         {
-            string pathFile = Application.StartupPath + "\\prevPath\\docPrevPath.loc";
-            string dir = "";
-            if (File.Exists(pathFile))
-                dir = File.ReadAllText(pathFile);
-            else
-                File.Create(pathFile);
+            string pathFile = Application.StartupPath + "\\prevPath\\docPrevPath.loc";            
+            string dir = File.ReadAllText(pathFile);           
             if (!Directory.Exists(dir))
                 dir = "c:\\";
             using (OpenFileDialog ofd = new OpenFileDialog()

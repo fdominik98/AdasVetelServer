@@ -9,7 +9,7 @@ namespace AdasVetelServer.logic.analyzing
 {
     class ContractLoadingThread
     {
-        static ManualResetEvent waitForTask = new ManualResetEvent(false);
+        private ManualResetEvent waitForTask = new ManualResetEvent(false);
         private List<LoadingTask> tasks = new List<LoadingTask>();     
         private bool endThread = false;
         public ContractLoadingThread()  { }

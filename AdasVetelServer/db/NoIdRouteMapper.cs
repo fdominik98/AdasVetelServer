@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace AdasVetelServer.db
 {
+    public delegate List<T> NoIdCallBack<T>();
     class NoIdRouteMapper<T>: RouteMapperBase where T : DbElement
     {
         private event NoIdCallBack<T> CallBack;
